@@ -203,7 +203,7 @@ const layer3=document.getElementById("imgholder");
         
 layer3.addEventListener("touchend",()=>{        
     diff=checkdiff[0]-checkdiff[checkdiff.length-1]
-    if (diff>50){
+    if (diff>30){
         
         
         if (currentImage<listOfImageLinks.length-1){
@@ -218,11 +218,11 @@ layer3.addEventListener("touchend",()=>{
             rightbtn.style.color = "rgb(155, 115, 54)";
             leftbtn.style.color = "rgb(155, 115, 54)";
             imgholder.children[0].src = listOfImageLinks[currentImage];
-            layer3.addEventListener("touchcancel",()=>{
-                setTimeout(()=>{
+//             layer3.addEventListener("touchcancel",()=>{
+//                 setTimeout(()=>{
 
-                },1000)
-            })
+//                 },1000)
+//             })
             
         }
         else{
@@ -231,7 +231,7 @@ layer3.addEventListener("touchend",()=>{
         }    
             
 }
-else if(diff<-50){
+else if(diff<-30){
 if (currentImage>0){
     
     diff=0;

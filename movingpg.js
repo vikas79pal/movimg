@@ -171,7 +171,7 @@ const layer3=document.getElementById("imgholder");
         checkdiffY.push(e.touches[0].screenY)
         diffX=checkdiffX[0]-checkdiffX[checkdiff.length-1]
         diffY=checkdiffY[0]-checkdiffY[checkdiff.length-1]
-        if (diffX>70 && diffY>20){
+        if (diffX>70 || diffY>20){
             
             
             if (currentImage<listOfImageLinks.length-1){
@@ -195,7 +195,7 @@ const layer3=document.getElementById("imgholder");
                 }    
     
 }
-else if(diffX>-70 && diffY>-20){
+else if(diffX>-70 || diffY>-20){
     if (currentImage>0){
         
         diffX=0;

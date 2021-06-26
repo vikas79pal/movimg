@@ -166,7 +166,7 @@ layer3.addEventListener("touchmove",(e)=>{
     console.log(e.touches[0].screenX)
     checkdiff.push(e.touches[0].screenX)
     diff=checkdiff[0]-checkdiff[checkdiff.length-1]
-    if (diff>30){
+    if (diff>40){
 
         if (currentImage<listOfImageLinks.length-1){
         diff=0;
@@ -186,7 +186,7 @@ layer3.addEventListener("touchmove",(e)=>{
         }    
 
     }
-    else if(diff<-30){
+    else if(diff<-40){
         if (currentImage>0){
 
         diff=0;

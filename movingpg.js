@@ -167,7 +167,7 @@ const layer3=document.getElementById("imgholder");
         console.log(e.touches[0].screenX)
         checkdiff.push(e.touches[0].screenX)
         diff=checkdiff[0]-checkdiff[checkdiff.length-1]
-        if (diff>50){
+        if (diff>70){
             
             
             if (currentImage<listOfImageLinks.length-1){
@@ -182,7 +182,7 @@ const layer3=document.getElementById("imgholder");
                 rightbtn.style.color = "rgb(155, 115, 54)";
                 leftbtn.style.color = "rgb(155, 115, 54)";
                     imgholder.children[0].src = listOfImageLinks[currentImage];
-                },500)
+                },100)
                 }
                 else{
                     currentImage=listOfImageLinks.length-1
@@ -190,7 +190,7 @@ const layer3=document.getElementById("imgholder");
                 }    
     
 }
-else if(diff<-50){
+else if(diff<-70){
     if (currentImage>0){
         
         diff=0;
@@ -204,7 +204,7 @@ else if(diff<-50){
         rightbtn.style.color = "rgb(155, 115, 54)";
         leftbtn.style.color = "rgb(155, 115, 54)";
         imgholder.children[0].src = listOfImageLinks[currentImage];
-        },500)
+        },100)
     }
     else{
         currentImage=0;

@@ -158,20 +158,25 @@ const layer3=document.getElementById("imgholder");
     
     // })
     
-    var checkdiff=[]
-    var diff=0
+    var checkdiffX=[]
+    var checkdiffY=[]
+    var diffX=0
+    var diffY=0
     
     
     layer3.addEventListener("touchmove",(e)=>{
         // console.log("mouse down")
         console.log(e.touches[0].screenX)
-        checkdiff.push(e.touches[0].screenX)
-        diff=checkdiff[0]-checkdiff[checkdiff.length-1]
-        if (diff>70){
+        checkdiffX.push(e.touches[0].screenX)
+        checkdiffY.push(e.touches[0].screenY)
+        diffX=checkdiffX[0]-checkdiffX[checkdiff.length-1]
+        diffY=checkdiffY[0]-checkdiffY[checkdiff.length-1]
+        if (diffX>70 && diffY>20){
             
             
             if (currentImage<listOfImageLinks.length-1){
-                diff=0;
+                diffX=0;
+                diffY=0;
                 checkdiff=[]
                 console.log("appear the next right most image",diff,checkdiff)
                 setTimeout(() => {
@@ -190,10 +195,11 @@ const layer3=document.getElementById("imgholder");
                 }    
     
 }
-else if(diff<-70){
+else if(diffX>-70 && diffY>-20){
     if (currentImage>0){
         
-        diff=0;
+        diffX=0;
+        diffY=0;
         checkdiff=[]
         console.log("appear the next left most image",diff,checkdiff)
         setTimeout(() => {

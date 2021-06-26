@@ -150,92 +150,99 @@ const layer3=document.getElementById("imgholder");
 
 //     }
 //     else {
-      
-//         currentImage = listOfImageLinks.length - 1;
+    
+    //         currentImage = listOfImageLinks.length - 1;
+    
+    //         // imgholder.children[0].src = listOfImageLinks[currentImage];
+    //     }
+    
+    // })
+    
+    var checkdiff=[]
+    var diff=0
+    
+    
+    layer3.addEventListener("touchmove",(e)=>{
+        // console.log("mouse down")
+        console.log(e.touches[0].screenX)
+        checkdiff.push(e.touches[0].screenX)
+        diff=checkdiff[0]-checkdiff[checkdiff.length-1]
+        if (diff>50){
+            
+            
+            if (currentImage<listOfImageLinks.length-1){
+                diff=0;
+                checkdiff=[]
+                console.log("appear the next right most image",diff,checkdiff)
+                setTimeout(() => {
+                circles.children[currentImage].style.listStyle="circle"
+                currentImage += 1
+                circles.children[currentImage].style.listStyle="disc"
+                
+                rightbtn.style.color = "rgb(155, 115, 54)";
+                leftbtn.style.color = "rgb(155, 115, 54)";
+                    imgholder.children[0].src = listOfImageLinks[currentImage];
+                },500)
+                }
+                else{
+                    currentImage=listOfImageLinks.length-1
+                    console.log("else of +30")
+                }    
+    
+}
+else if(diff<-50){
+    if (currentImage>0){
         
-//         // imgholder.children[0].src = listOfImageLinks[currentImage];
-//     }
-
-// })
-
-var checkdiff=[]
-var diff=0
-
-layer3.addEventListener("touchmove",(e)=>{
-    // console.log("mouse down")
-    console.log(e.touches[0].screenX)
-    checkdiff.push(e.touches[0].screenX)
-    diff=checkdiff[0]-checkdiff[checkdiff.length-1]
-    if (diff>50){
-
-        if (currentImage<listOfImageLinks.length-1){
-        diff=0;
-        checkdiff=[]
-        console.log("appear the next right most image",diff,checkdiff)
-        circles.children[currentImage].style.listStyle="circle"
-            currentImage += 1
-            circles.children[currentImage].style.listStyle="disc"
-
-            rightbtn.style.color = "rgb(155, 115, 54)";
-            leftbtn.style.color = "rgb(155, 115, 54)";
-            imgholder.children[0].src = listOfImageLinks[currentImage];
-        }
-        else{
-            currentImage=listOfImageLinks.length-1
-            console.log("else of +30")
-        }    
-
-    }
-    else if(diff<-50){
-        if (currentImage>0){
-
         diff=0;
         checkdiff=[]
         console.log("appear the next left most image",diff,checkdiff)
+        setTimeout(() => {
         circles.children[currentImage].style.listStyle="circle";
-            currentImage -= 1
-            circles.children[currentImage].style.listStyle="disc"
+        currentImage -= 1
+        circles.children[currentImage].style.listStyle="disc"
         
         rightbtn.style.color = "rgb(155, 115, 54)";
         leftbtn.style.color = "rgb(155, 115, 54)";
         imgholder.children[0].src = listOfImageLinks[currentImage];
+        },500)
     }
     else{
         currentImage=0;
     }
-        
-    }
+    
+}
 
 
 //     if (currentImage > 0) {
-//         if (currentImage >= 0 && currentImage < listOfImageLinks.length ) {
-//             circles.children[currentImage].style.listStyle="circle";
-//             currentImage -= 1
-//             circles.children[currentImage].style.listStyle="disc"
-       
-//         rightbtn.style.color = "rgb(155, 115, 54)";
-//         leftbtn.style.color = "rgb(155, 115, 54)";
-//         imgholder.children[0].src = listOfImageLinks[currentImage];
+    //         if (currentImage >= 0 && currentImage < listOfImageLinks.length ) {
+        //             circles.children[currentImage].style.listStyle="circle";
+        //             currentImage -= 1
+        //             circles.children[currentImage].style.listStyle="disc"
+        
+        //         rightbtn.style.color = "rgb(155, 115, 54)";
+        //         leftbtn.style.color = "rgb(155, 115, 54)";
+        //         imgholder.children[0].src = listOfImageLinks[currentImage];
         
         
-//     }
-//     if (currentImage == 0) {
-//         leftbtn.style.color = "rgb(211, 173, 116)";
-
-//     }
-//     else {
-//         leftbtn.style.color = "rgb(155, 115, 54)";
-//     }
-    
-    
-// }
-// else {
-   
-//     currentImage = 0
-//     leftbtn.style.color = "rgb(211, 173, 116)";
-// }
-
-
-})
-
-
+        //     }
+        //     if (currentImage == 0) {
+            //         leftbtn.style.color = "rgb(211, 173, 116)";
+            
+    //     }
+    //     else {
+        //         leftbtn.style.color = "rgb(155, 115, 54)";
+        //     }
+        
+        
+        // }
+        // else {
+            
+            //     currentImage = 0
+            //     leftbtn.style.color = "rgb(211, 173, 116)";
+            // }
+            
+            
+        })
+        
+        
+        
